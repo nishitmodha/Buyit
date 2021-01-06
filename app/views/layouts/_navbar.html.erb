@@ -19,6 +19,24 @@
 
       <%= link_to 'Cart', shopping_cart_path, class:"navbar-item" %>
 
+
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        
+          <%= link_to "Categories", categories_path, class: "navbar-link" %>
+        
+
+        <div class="navbar-dropdown">
+          <% Category.all.each do |category| %>
+            <%= link_to category.name, category_path(category), class: "navbar-item" %>
+          <% end %>
+        </div>
+      </div>
+
+
+
+
+
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
