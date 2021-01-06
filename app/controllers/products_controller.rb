@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, only: [:new, :create, :update, :destroy]
+  before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
 
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+    @categories = Category.all
   end
 
   # GET /products/1
